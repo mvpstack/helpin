@@ -1,0 +1,35 @@
+{
+      "name": "helpin",
+      "version": "0.1.0",
+      "private": true,
+      "scripts": {
+            "dev": "next dev",
+            "build": "next build",
+            "start": "next start",
+            "lint": "next lint"
+      },
+      "dependencies": {
+            "@geist-ui/core": "^2.3.8",
+            "@maxmind/geoip2-node": "^3.5.0",
+            "@supabase/auth-helpers-nextjs": "^0.5.2",
+            "@supabase/auth-helpers-react": "^0.3.1",
+            "@supabase/supabase-js": "^2.1.3",
+            "eslint": "8.29.0",
+            "eslint-config-next": "13.0.6",
+            "flag-icons": "^6.6.6",
+            "formik": "^2.2.9",
+            "moment": "^2.29.4",
+            "next": "13.0.6",
+            "node-geocoder": "^4.2.0",
+            "nprogress": "^0.2.0",
+            "react": "18.2.0",
+            "react-country-flag": "^3.0.2",
+            "react-dom": "18.2.0",
+            "react-icons": "^4.7.1",
+            "react-pdf": "^6.2.0",
+            "slugify": "^1.6.5"
+      },
+      "devDependencies": {
+            "sass": "^1.56.1"
+      }
+}
