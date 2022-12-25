@@ -118,142 +118,152 @@ const WebsiteDashboard = ({
       };
 
       return (
-            <div className="dashboard">
-                  <div className="chat-container">
-                        <DashboardSideNav active="dashboard" />
-                        <Grid.Container>
-                              <Grid xs={24} md={6} xl={4}>
-                                    <CustomerList
-                                          customer={customer}
-                                          customerList={customerList}
-                                    />
-                              </Grid>
-                              <Grid
-                                    xs={24}
-                                    md={13}
-                                    xl={16}
-                                    className="chat-container-dash"
-                              >
-                                    <div className="chat-box-dash dashboard-chat">
-                                          <div className="chat-head">
-                                                <div className="ticket-meta">
-                                                      <Text h3>
-                                                            <span>
-                                                                  {
-                                                                        ticketObj.title
-                                                                  }
-                                                            </span>
-                                                            <EditTicket
-                                                                  ticketObj={
-                                                                        ticketObj
-                                                                  }
-                                                                  triggerUpdate={(
-                                                                        obj
-                                                                  ) =>
-                                                                        setTicketObj(
+            <>
+                  <Head>
+                        <title>Dashboard</title>
+                        <link rel="icon" href="/favicon.png" />
+                  </Head>
+                  <div className="dashboard">
+                        <div className="chat-container">
+                              <DashboardSideNav active="dashboard" />
+                              <Grid.Container>
+                                    <Grid xs={24} md={6} xl={4}>
+                                          <CustomerList
+                                                customer={customer}
+                                                customerList={customerList}
+                                          />
+                                    </Grid>
+                                    <Grid
+                                          xs={24}
+                                          md={13}
+                                          xl={16}
+                                          className="chat-container-dash"
+                                    >
+                                          <div className="chat-box-dash dashboard-chat">
+                                                <div className="chat-head">
+                                                      <div className="ticket-meta">
+                                                            <Text h3>
+                                                                  <span>
+                                                                        {
+                                                                              ticketObj.title
+                                                                        }
+                                                                  </span>
+                                                                  <EditTicket
+                                                                        ticketObj={
+                                                                              ticketObj
+                                                                        }
+                                                                        triggerUpdate={(
                                                                               obj
-                                                                        )
-                                                                  }
-                                                            />
-                                                      </Text>
-                                                </div>
-                                                <div className="ticket-support-team">
-                                                      <Avatar.Group count={2}>
-                                                            <Avatar
-                                                                  src="https://static.generated.photos/vue-static/home/hero/3.png"
-                                                                  stacked
-                                                            />
-                                                            <Avatar
-                                                                  src="https://static.generated.photos/vue-static/home/hero/5.png"
-                                                                  stacked
-                                                            />
-                                                            <Avatar
-                                                                  src="https://static.generated.photos/vue-static/home/hero/6.png"
-                                                                  stacked
-                                                            />
-                                                      </Avatar.Group>
-                                                </div>
-                                          </div>
-                                          <div
-                                                style={{
-                                                      height: 'calc(100vh - 150px)',
-                                                      padding: '0px 20px',
-                                                      overflowY: 'scroll',
-                                                }}
-                                                ref={messagesRef}
-                                          >
-                                                <ChatMessages
-                                                      publicChat={false}
-                                                      messagesList={
-                                                            messagesList
-                                                      }
-                                                />
-                                          </div>
-                                          <div className="chat-message-input">
-                                                <div className="message-form">
-                                                      <div className="file-attach">
-                                                            <UploadAvatar
-                                                                  uid={
-                                                                        session
-                                                                              ?.user
-                                                                              .id
-                                                                  }
-                                                                  onUpload={
-                                                                        onUpload
-                                                                  }
-                                                            />
+                                                                        ) =>
+                                                                              setTicketObj(
+                                                                                    obj
+                                                                              )
+                                                                        }
+                                                                  />
+                                                            </Text>
                                                       </div>
-                                                      <div>
-                                                            <Input
-                                                                  placeholder="Type a message"
-                                                                  width="100%"
-                                                                  value={
-                                                                        message
-                                                                  }
-                                                                  onChange={(
-                                                                        e
-                                                                  ) =>
-                                                                        setMessage(
+                                                      <div className="ticket-support-team">
+                                                            <Avatar.Group
+                                                                  count={2}
+                                                            >
+                                                                  <Avatar
+                                                                        src="https://static.generated.photos/vue-static/home/hero/3.png"
+                                                                        stacked
+                                                                  />
+                                                                  <Avatar
+                                                                        src="https://static.generated.photos/vue-static/home/hero/5.png"
+                                                                        stacked
+                                                                  />
+                                                                  <Avatar
+                                                                        src="https://static.generated.photos/vue-static/home/hero/6.png"
+                                                                        stacked
+                                                                  />
+                                                            </Avatar.Group>
+                                                      </div>
+                                                </div>
+                                                <div
+                                                      style={{
+                                                            height: 'calc(100vh - 150px)',
+                                                            padding: '0px 20px',
+                                                            overflowY: 'scroll',
+                                                      }}
+                                                      ref={messagesRef}
+                                                >
+                                                      <ChatMessages
+                                                            publicChat={false}
+                                                            messagesList={
+                                                                  messagesList
+                                                            }
+                                                      />
+                                                </div>
+                                                <div className="chat-message-input">
+                                                      <div className="message-form">
+                                                            <div className="file-attach">
+                                                                  <UploadAvatar
+                                                                        uid={
+                                                                              session
+                                                                                    ?.user
+                                                                                    .id
+                                                                        }
+                                                                        onUpload={
+                                                                              onUpload
+                                                                        }
+                                                                  />
+                                                            </div>
+                                                            <div>
+                                                                  <Input
+                                                                        placeholder="Type a message"
+                                                                        width="100%"
+                                                                        value={
+                                                                              message
+                                                                        }
+                                                                        onChange={(
                                                                               e
-                                                                                    .target
-                                                                                    .value
-                                                                        )
-                                                                  }
-                                                                  onKeyDown={
-                                                                        sendMessage
-                                                                  }
-                                                                  iconRight={
-                                                                        <svg
-                                                                              xmlns="http://www.w3.org/2000/svg"
-                                                                              fill="none"
-                                                                              viewBox="0 0 24 24"
-                                                                              strokeWidth={
-                                                                                    1.5
-                                                                              }
-                                                                              stroke="currentColor"
-                                                                              className="w-6 h-6"
-                                                                        >
-                                                                              <path
-                                                                                    strokeLinecap="round"
-                                                                                    strokeLinejoin="round"
-                                                                                    d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5"
-                                                                              />
-                                                                        </svg>
-                                                                  }
-                                                            />
+                                                                        ) =>
+                                                                              setMessage(
+                                                                                    e
+                                                                                          .target
+                                                                                          .value
+                                                                              )
+                                                                        }
+                                                                        onKeyDown={
+                                                                              sendMessage
+                                                                        }
+                                                                        iconRight={
+                                                                              <svg
+                                                                                    xmlns="http://www.w3.org/2000/svg"
+                                                                                    fill="none"
+                                                                                    viewBox="0 0 24 24"
+                                                                                    strokeWidth={
+                                                                                          1.5
+                                                                                    }
+                                                                                    stroke="currentColor"
+                                                                                    className="w-6 h-6"
+                                                                              >
+                                                                                    <path
+                                                                                          strokeLinecap="round"
+                                                                                          strokeLinejoin="round"
+                                                                                          d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5"
+                                                                                    />
+                                                                              </svg>
+                                                                        }
+                                                                  />
+                                                            </div>
                                                       </div>
                                                 </div>
                                           </div>
-                                    </div>
-                              </Grid>
-                              <Grid xs={24} md={5} xl={4}>
-                                    <TicketInfoForm
-                                          activeCustomerObj={activeCustomerObj}
-                                    />
-                              </Grid>
-                        </Grid.Container>
+                                    </Grid>
+                                    <Grid xs={24} md={5} xl={4}>
+                                          <TicketInfoForm
+                                                activeCustomerObj={
+                                                      activeCustomerObj
+                                                }
+                                          />
+                                    </Grid>
+                              </Grid.Container>
+                        </div>
                   </div>
-            </div>
+            </>
       );
 };
 

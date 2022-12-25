@@ -3,24 +3,34 @@ import { createServerSupabaseClient } from '@supabase/auth-helpers-nextjs';
 import { useSession } from '@supabase/auth-helpers-react';
 import DashboardSideNav from '../../components/dashboardSideNav';
 import CustomerList from '../../components/customerList';
+import Head from 'next/head';
 
 const Dashboard = ({ customerList }) => {
-      console.log(customerList);
       const session = useSession();
       return (
-            <div className="dashboard">
-                  <div className="chat-container">
-                        <DashboardSideNav active="dashboard" />
-                        <Grid.Container gap={4}>
-                              <Grid xs={24} md={6} xl={4}>
-                                    <CustomerList customerList={customerList} />
-                              </Grid>
-                              <Grid xs={24} md={17}>
-                                    <Text h4>Welcome back to work. 👋</Text>
-                              </Grid>
-                        </Grid.Container>
+            <>
+                  <Head>
+                        <title>Dashboard</title>
+                        <link rel="icon" href="/favicon.png" />
+                  </Head>
+                  <div className="dashboard">
+                        <div className="chat-container">
+                              <DashboardSideNav active="dashboard" />
+                              <Grid.Container gap={4}>
+                                    <Grid xs={24} md={6} xl={4}>
+                                          <CustomerList
+                                                customerList={customerList}
+                                          />
+                                    </Grid>
+                                    <Grid xs={24} md={17}>
+                                          <Text h4>
+                                                Welcome back to work. 👋
+                                          </Text>
+                                    </Grid>
+                              </Grid.Container>
+                        </div>
                   </div>
-            </div>
+            </>
       );
 };
 

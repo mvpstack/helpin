@@ -4,7 +4,6 @@ import Link from 'next/link';
 import ReactCountryFlag from 'react-country-flag';
 
 const CustomerList = ({ customerList, customer }) => {
-      console.log(customerList);
       return (
             <>
                   {customerList.length > 0 ? (
