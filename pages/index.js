@@ -106,7 +106,8 @@ export const getServerSideProps = async (ctx) => {
                   .select(`email,id,role`)
                   .eq('id', user.id)
                   .single();
-            const { role } = userObj;
+            console.log(userObj);
+            const role = userObj?.role;
             if (role !== 'customer')
                   return {
                         redirect: {

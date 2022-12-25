@@ -11,7 +11,6 @@ import 'nprogress/nprogress.css';
 
 function MyApp({ Component, pageProps }) {
       const [supabase] = useState(() => createBrowserSupabaseClient());
-      const [projectInfo, setProjectInfo] = useState([]);
       const router = useRouter();
 
       const dataFetchedRef = useRef(false);
@@ -75,13 +74,6 @@ function MyApp({ Component, pageProps }) {
                               })
                               .select();
                   }
-
-                  const { data: projectData, error: webError } = await supabase
-                        .from('projectInfo')
-                        .select(`*`)
-                        .eq('ownerId', user.id)
-                        .order('created_at', { ascending: false });
-                  setProjectInfo(projectData);
             }
       }
 
@@ -92,7 +84,7 @@ function MyApp({ Component, pageProps }) {
                         supabaseClient={supabase}
                         initialSession={pageProps.initialSession}
                   >
-                        <Component {...pageProps} projectInfo={projectInfo} />
+                        <Component {...pageProps} />
                   </SessionContextProvider>
             </GeistProvider>
       );

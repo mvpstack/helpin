@@ -15,7 +15,6 @@ import TicketList from '../../../components/ticketList';
 
 const WebsiteDashboard = ({
       customer,
-      projectInfo,
       customerList,
       customerTickets,
       activeCustomerObj,
@@ -25,83 +24,68 @@ const WebsiteDashboard = ({
             <div className="dashboard">
                   <div className="chat-container">
                         <DashboardSideNav active="dashboard" />
-                        {projectInfo && projectInfo.length > 0 ? (
-                              <div>
-                                    <Grid.Container gap={1}>
-                                          <Grid xs={24} md={6} xl={4}>
-                                                <CustomerList
-                                                      customerList={
-                                                            customerList
-                                                      }
-                                                      customer={customer}
-                                                />
-                                          </Grid>
-                                          <Grid xs={24} md={13} xl={16}>
-                                                {customerTickets.length > 0 ? (
-                                                      <div className="ticket-container dashboard-chat">
-                                                            <br />
-                                                            <CreateTicket
-                                                                  btnType="primary"
-                                                                  activeCustomerObj={
-                                                                        activeCustomerObj
-                                                                  }
-                                                            />
-                                                            <br />
-                                                            <br />
-                                                            <TicketList
-                                                                  customerTickets={
-                                                                        customerTickets
-                                                                  }
-                                                                  customer={
-                                                                        customer
-                                                                  }
-                                                            />
-                                                            <div className="history">
-                                                                  <Text
-                                                                        mt={0}
-                                                                        mb={0}
-                                                                        style={{
-                                                                              fontWeight: 500,
-                                                                        }}
-                                                                  >
-                                                                        SHOW
-                                                                        HISTORY
-                                                                  </Text>
-                                                            </div>
-                                                      </div>
-                                                ) : (
-                                                      <>
-                                                            <Empty
-                                                                  hrefPath="/dashboard"
-                                                                  title="There no ticket for this customer."
-                                                                  description="Account created "
-                                                                  icon={
-                                                                        <HiMessages />
-                                                                  }
-                                                                  secondButton={
-                                                                        <CreateTicket
-                                                                              btnType="secondary"
-                                                                              activeCustomerObj={
-                                                                                    activeCustomerObj
-                                                                              }
-                                                                        />
-                                                                  }
-                                                            />
-                                                      </>
-                                                )}
-                                          </Grid>
-                                          <Grid xs={24} md={5} xl={4}>
-                                                <TicketInfoForm
+                        <Grid.Container gap={1}>
+                              <Grid xs={24} md={6} xl={4}>
+                                    <CustomerList
+                                          customerList={customerList}
+                                          customer={customer}
+                                    />
+                              </Grid>
+                              <Grid xs={24} md={13} xl={16}>
+                                    {customerTickets.length > 0 ? (
+                                          <div className="ticket-container dashboard-chat">
+                                                <br />
+                                                <CreateTicket
+                                                      btnType="primary"
                                                       activeCustomerObj={
                                                             activeCustomerObj
                                                       }
                                                 />
-                                          </Grid>
-                                    </Grid.Container>
-                              </div>
-                        ) : (
-                              <Empty hrefPath="/dashboard/create" />
-                        )}
+                                                <br />
+                                                <br />
+                                                <TicketList
+                                                      customerTickets={
+                                                            customerTickets
+                                                      }
+                                                      customer={customer}
+                                                />
+                                                <div className="history">
+                                                      <Text
+                                                            mt={0}
+                                                            mb={0}
+                                                            style={{
+                                                                  fontWeight: 500,
+                                                            }}
+                                                      >
+                                                            SHOW HISTORY
+                                                      </Text>
+                                                </div>
+                                          </div>
+                                    ) : (
+                                          <>
+                                                <Empty
+                                                      hrefPath="/dashboard"
+                                                      title="There no ticket for this customer."
+                                                      description="Account created "
+                                                      icon={<HiMessages />}
+                                                      secondButton={
+                                                            <CreateTicket
+                                                                  btnType="secondary"
+                                                                  activeCustomerObj={
+                                                                        activeCustomerObj
+                                                                  }
+                                                            />
+                                                      }
+                                                />
+                                          </>
+                                    )}
+                              </Grid>
+                              <Grid xs={24} md={5} xl={4}>
+                                    <TicketInfoForm
+                                          activeCustomerObj={activeCustomerObj}
+                                    />
+                              </Grid>
+                        </Grid.Container>
                   </div>
             </div>
       );

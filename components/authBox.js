@@ -14,7 +14,7 @@ const AuthBox = () => {
       return (
             <div className="auth-box">
                   <div className="auth-form form-dev">
-                        <Text h2 style={{ fontSize: 30, maxWidth: 350 }}>
+                        <Text h4 style={{ maxWidth: 350 }}>
                               Hey 👋 Let{`'`}s start with your email
                         </Text>
                         {isLoginBox ? (

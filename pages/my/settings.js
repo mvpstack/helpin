@@ -45,10 +45,9 @@ const CustomerSettings = ({ ticketList }) => {
 
                                     <div className="chat-box">
                                           <Text h4 style={{ fontWeight: 500 }}>
-                                                Hi! Looking good, you work out?
-                                                💪
+                                                Setting Page
                                           </Text>
-                                          CustomerSettings
+                                          Work in progress
                                     </div>
                               </div>
                         )}

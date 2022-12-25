@@ -6,7 +6,7 @@ import Empty from '../components/empty';
 import Layout from '../components/layout';
 import DashboardSideNav from '../components/dashboardSideNav';
 
-const Teams = ({ projectInfo }) => {
+const Teams = () => {
       const session = useSession();
       return (
             <div className="dashboard">

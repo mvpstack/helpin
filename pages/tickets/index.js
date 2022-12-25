@@ -6,24 +6,18 @@ import Empty from '../../components/empty';
 import Layout from '../../components/layout';
 import DashboardSideNav from '../../components/dashboardSideNav';
 
-const Tickets = ({ projectInfo }) => {
+const Tickets = () => {
       const session = useSession();
       return (
             <div className="dashboard">
                   <Layout title="Helpin — A customer support ticketing software">
-                        {projectInfo && projectInfo.length > 0 ? (
-                              <div>
-                                    <DashboardSideNav active="tickets" />
+                        <DashboardSideNav active="tickets" />
 
-                                    <Grid.Container gap={2}>
-                                          <Grid xs={20} md={20}>
-                                                <Text h2>tickets</Text>
-                                          </Grid>
-                                    </Grid.Container>
-                              </div>
-                        ) : (
-                              <Empty hrefPath="/dashboard/create" />
-                        )}
+                        <Grid.Container gap={2}>
+                              <Grid xs={20} md={20}>
+                                    <Text h2>tickets</Text>
+                              </Grid>
+                        </Grid.Container>
                   </Layout>
             </div>
       );
