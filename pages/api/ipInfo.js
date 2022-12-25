@@ -3,6 +3,8 @@
 import getIpInfo from '../../config/ipLookup';
 
 export default async function handler(req, res) {
-      const ipInfoObj = await getIpInfo('198.16.66.141');
+      const remoteIP =
+            req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+      const ipInfoObj = await getIpInfo(remoteIP);
       res.status(200).json(ipInfoObj);
 }
