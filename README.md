@@ -8,9 +8,11 @@ You can test client side here → https://support.helpin.so & just signup with r
 
 ## How to setup on vercel
 
-Currently to setup this software is tricky because of supbase clone is hard. So, if you reall wanna use this for your company then block a 30 minute video call with me to setup for your for free.
+### Setup Supabase Tables
 
-https://calendly.com/mddanishyusuf
+Go to **schema_query_backup** folder and copy all the query and run into supabase sql editor, that's all.
+
+And deploy this on vercel.com with setting up env variables from .env.local.example
 
 ## Roadmap
 
